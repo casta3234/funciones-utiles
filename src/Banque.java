@@ -11,29 +11,24 @@ import java.util.ArrayList;
  *
  * @author Estudiante
  */
-public class Banque {
-    private String code;
-    private ArrayList<Compte> comptes;
-    private ArrayList<Type> types;
-
-    public Banque(String code) {
-        this.code = code;
-        this.comptes = new ArrayList<>();
-        this.types = new ArrayList<>();
-    }
-    public void addCompte(Compte c){
-        this.comptes.add(c);
-    }
-    public void addType(){
-        
-    }
-
-    @Override
-    public String toString() {
-           for (Compte c : this.comptes) {
-               c.toString();
-        }
-        return "Banque{" + "code=" + code + ", comptes=" + comptes + ", types=" + types + '}';
-    }
-    
+public class leer texto {
+   public Stirng leer (String nombreArchivo){
+       try{
+           FileReader r = new FileReader(nombreArchivo);
+           BufferedReader buffer = new BufferedReader(r);
+           
+           String aux = "";
+           while(aux != null){
+               aux += buffer.readLine();
+               if(aux == null){
+                   break;
+               } 
+           }
+           return aux;
+       }
+       catch (Exception e){
+           return "no se encontro el archivo" ;
+       }
+   }
+       
 }
