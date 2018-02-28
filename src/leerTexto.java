@@ -1,4 +1,7 @@
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 
 /*
@@ -11,8 +14,8 @@ import java.util.ArrayList;
  *
  * @author Estudiante
  */
-public class leer texto {
-   public Stirng leer (String nombreArchivo){
+public class leerTexto {
+   public String leer (String nombreArchivo){
        try{
            FileReader r = new FileReader(nombreArchivo);
            BufferedReader buffer = new BufferedReader(r);
@@ -26,7 +29,7 @@ public class leer texto {
            }
            return aux;
        }
-       catch (Exception e){
+       catch (IOException e){
            return "no se encontro el archivo" ;
        }
    }
