@@ -15,23 +15,30 @@ import java.util.ArrayList;
  * @author Estudiante
  */
 public class leerTexto {
-   public String leer (String nombreArchivo){
+   public static String leer (String nombreArchivo){
        try{
            FileReader r = new FileReader(nombreArchivo);
            BufferedReader buffer = new BufferedReader(r);
            
            String aux = "";
+           String aux2 = "";
            while(aux != null){
-               aux += buffer.readLine();
+               aux = buffer.readLine();
+               if ( aux != null){
+               aux2 += aux;
+           }
                if(aux == null){
                    break;
                } 
            }
-           return aux;
+           return aux2;
        }
        catch (IOException e){
            return "no se encontro el archivo" ;
        }
    }
-       
+    public static void main(String[] args) {
+        System.out.println(leer("e.txt"));
+    }
+   
 }
